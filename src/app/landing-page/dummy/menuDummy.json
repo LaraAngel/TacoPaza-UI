@@ -1,0 +1,18 @@
+{
+    "categories": [
+        {
+            "name": "inventario"
+        },
+        {
+            "name": "ventas"
+        },
+        {
+            "name": "reportes"
+        },
+        {
+            "name": "compras"
+        },        {
+            "name":"administracion"
+        }
+    ]
+}

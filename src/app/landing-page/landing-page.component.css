@@ -1,0 +1,14 @@
+.row {
+    background-color: aliceblue;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.ejemploFeo {
+    width: 25%;
+    z-index: 100;
+    position: absolute;
+
+}
