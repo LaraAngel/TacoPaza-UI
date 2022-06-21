@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     MatExpansionModule,
     MatTreeModule,
     MatButtonModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
