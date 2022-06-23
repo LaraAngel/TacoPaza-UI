@@ -6,9 +6,9 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./header-page.component.css']
 })
 export class HeaderPageComponent implements OnInit {
-  
+
   @Input() showMenuBool: boolean;
-  
+
   constructor() {
     this.showMenuBool = true;
     this.showMenuEvent.emit(this.showMenuBool);
@@ -23,7 +23,4 @@ export class HeaderPageComponent implements OnInit {
     this.showMenuEvent.emit(this.showMenuBool);
   }
 
-  clickOnMenu() {
-    this.showMenuBool = false;
-  }
 }

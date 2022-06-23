@@ -1,0 +1,11 @@
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{categorie.categoryName}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngFor="let subCategories of categorie.subCategories; index as i; first as isFirst">
+        <app-menu-category-option [subCategory]="subCategories" [category] = "categorie.categoryName"></app-menu-category-option>
+    </div>
+
+</mat-expansion-panel>
