@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-11">
+    </div>
+    <div class="col-1">
+      <app-orders [hidden]="!showOrders()"></app-orders>
+      <app-food-packages [hidden]="!showFoodPackages()"></app-food-packages>
+      <app-foods [hidden]="!showFoods()"></app-foods>
+      <app-balances-cash [hidden]="!showBalancesCash()"></app-balances-cash>
+    </div>
+  </div>
+</div>
+
