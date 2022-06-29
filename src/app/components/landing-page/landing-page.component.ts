@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import {GlobalVariables} from "../Utils/global.variables";
+import {GlobalVariables} from "../../Utils/global.variables";
 
 @Component({
   selector: 'app-landing-page',
@@ -26,19 +26,19 @@ export class LandingPageComponent implements OnInit {
   }
 
   public showInventory() {
-    return this.page.section != 'Inventario';
+    return this.page.section == 'Inventario' && this.page.status == 'Active';
   }
   public showSales() {
-    return this.page.section != 'Ventas';
+    return this.page.section == 'Ventas' && this.page.status == 'Active';
   }
   public showBuyers() {
-    return this.page.section != 'Compras';
+    return this.page.section == 'Compras' && this.page.status == 'Active';
   }
   public showReports() {
-    return this.page.section != 'Reportes';
+    return this.page.section == 'Reportes' && this.page.status == 'Active';
   }
   public showAdministration() {
-    return this.page.section != 'Administracion';
+    return this.page.section == 'Administracion' && this.page.status == 'Active';
   }
 
   public onClickedOutside(e: Event) {

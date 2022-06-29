@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {GlobalVariables} from "../../Utils/global.variables";
-import {SubCategory} from "../../../models/menu/SubCategory";
+import {SubCategoryInterface} from "../../../models/menu/SubCategory.interface";
+import {GlobalVariables} from "../../../Utils/global.variables";
 
 @Component({
   selector: 'app-menu-category-option',
@@ -9,7 +9,7 @@ import {SubCategory} from "../../../models/menu/SubCategory";
 })
 export class MenuCategoryOptionComponent implements OnInit {
 
-  @Input() subCategory: SubCategory;
+  @Input() subCategory: SubCategoryInterface;
   @Input() category: string;
 
   constructor(private gVariables: GlobalVariables) { }
@@ -20,6 +20,9 @@ export class MenuCategoryOptionComponent implements OnInit {
   showClick() {
     this.gVariables.section =this.category;
     this.gVariables.pageName = this.subCategory.pageName;
+    this.gVariables.status = this.subCategory.status.statusName;
+    console.log(this.gVariables);
+
   }
 
 }

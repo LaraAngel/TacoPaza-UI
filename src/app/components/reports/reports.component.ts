@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalVariables} from "../../Utils/global.variables";
 
 @Component({
   selector: 'app-reports',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsComponent implements OnInit {
 
-  constructor() { }
+  private page: GlobalVariables;
+
+  constructor(gVariables: GlobalVariables) {
+    this.page = gVariables;
+  }
 
   ngOnInit(): void {
   }

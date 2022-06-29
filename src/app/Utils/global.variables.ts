@@ -4,4 +4,5 @@ import { Injectable } from "@angular/core";
 export class GlobalVariables{
   section: string = 'index';
   pageName: string = 'index';
+  status: string = 'Active';
 }
