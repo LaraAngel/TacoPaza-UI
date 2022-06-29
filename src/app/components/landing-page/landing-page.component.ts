@@ -7,22 +7,19 @@ import {GlobalVariables} from "../../Utils/global.variables";
   styleUrls: ['./landing-page.component.css'],
 })
 export class LandingPageComponent implements OnInit {
-
-  showMenuBool = true;
-  isInventoryClicker = true;
-
   page: GlobalVariables;
+
+
 
   constructor(gVariables: GlobalVariables) {
     this.page = gVariables;
   }
 
   ngOnInit(): void {
-    this.isInventoryClicker = this.page.section === 'Inventory';
   }
 
   public clickOnMenu(e: boolean) {
-    this.showMenuBool = e;
+    this.page.isShowpage = e;
   }
 
   public showInventory() {
@@ -42,7 +39,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   public onClickedOutside(e: Event) {
-    this.showMenuBool = e.isTrusted
+    this.page.isShowpage = e.isTrusted
   }
 
 }

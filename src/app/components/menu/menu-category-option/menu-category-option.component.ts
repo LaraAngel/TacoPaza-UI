@@ -21,8 +21,7 @@ export class MenuCategoryOptionComponent implements OnInit {
     this.gVariables.section =this.category;
     this.gVariables.pageName = this.subCategory.pageName;
     this.gVariables.status = this.subCategory.status.statusName;
-    console.log(this.gVariables);
-
+    this.gVariables.isShowpage = true;
   }
 
 }
