@@ -1,7 +1,7 @@
 <div (clickOutside)="onClickedOutside($event)">
-  <app-header-page (showMenuEvent)="clickOnMenu($event)" [showMenuBool]=showMenuBool></app-header-page>
+  <app-header-page (showMenuEvent)="clickOnMenu($event)" [showMenuBool]=this.page.isShowpage></app-header-page>
 <mat-accordion>
-  <app-menu class="bg-secondary ejemploFeo" [hidden]="showMenuBool"></app-menu>
+  <app-menu class="bg-secondary ejemploFeo" [hidden]="this.page.isShowpage"></app-menu>
 </mat-accordion>
 </div>
 
