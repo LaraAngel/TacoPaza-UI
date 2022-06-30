@@ -12,25 +12,25 @@ export class SalesComponent implements OnInit {
 
   constructor(gVariables: GlobalVariables) {
     this.page = gVariables;
-    console.log(gVariables.pageName);
+    console.log(gVariables.subCategoryName);
   }
 
   ngOnInit(): void {
   }
 
   public showOrders() {
-    return this.page.pageName == 'Orders' && this.page.status == 'Active';
+    return this.page.subCategoryName == 'Orders' && this.page.status == 'Active';
   }
 
   public showFoodPackages() {
-    return this.page.pageName == 'PackageFoods' && this.page.status == 'Active';
+    return this.page.subCategoryName == 'PackageFoods' && this.page.status == 'Active';
   }
 
   public showFoods() {
-    return this.page.pageName == 'Foods' && this.page.status == 'Active';
+    return this.page.subCategoryName == 'Foods' && this.page.status == 'Active';
   }
 
   public showBalancesCash() {
-    return this.page.pageName == 'BalancesCash' && this.page.status == 'Active';
+    return this.page.subCategoryName == 'BalancesCash' && this.page.status == 'Active';
   }
 }

@@ -11,6 +11,7 @@ export class HeaderPageComponent implements OnInit {
   @Input() showMenuBool: boolean;
 
   page: GlobalVariables;
+  pageName: string;
 
   constructor(gVariables: GlobalVariables) {
     this.showMenuBool = true;

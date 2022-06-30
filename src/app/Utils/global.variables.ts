@@ -3,7 +3,8 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class GlobalVariables{
   section: string = 'index';
-  pageName: string = 'index';
+  subCategoryName: string = 'index';
   status: string = 'Active';
   isShowpage: boolean = true;
+  pageName: string;
 }

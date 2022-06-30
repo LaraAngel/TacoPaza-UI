@@ -19,7 +19,8 @@ export class MenuCategoryOptionComponent implements OnInit {
 
   showClick() {
     this.gVariables.section =this.category;
-    this.gVariables.pageName = this.subCategory.pageName;
+    this.gVariables.subCategoryName = this.subCategory.pageName;
+    this.gVariables.pageName = this.subCategory.subCategoryName;
     this.gVariables.status = this.subCategory.status.statusName;
     this.gVariables.isShowpage = true;
   }

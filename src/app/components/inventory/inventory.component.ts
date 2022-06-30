@@ -17,30 +17,30 @@ export class InventoryComponent implements OnInit {
   }
 
   showDepartment() {
-    return this.page.pageName == 'Departament' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'Departament' && this.page.status == 'Activo';
   }
 
   showInventoryControl() {
-    return this.page.pageName == 'InventoryControl' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'InventoryControl' && this.page.status == 'Activo';
   }
 
   showPresentation() {
-    return this.page.pageName == 'Presentation' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'Presentation' && this.page.status == 'Activo';
   }
 
   showProducts() {
-    return this.page.pageName == 'Products' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'Products' && this.page.status == 'Activo';
   }
 
   showReceiveProducts() {
-    return this.page.pageName == 'ReceiveProducts' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'ReceiveProducts' && this.page.status == 'Activo';
   }
 
   showInventories() {
-    return this.page.pageName == 'SeeInventories' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'SeeInventories' && this.page.status == 'Activo';
   }
 
   showUnitMeasures() {
-    return this.page.pageName == 'UnitMeasure' && this.page.status == 'Activo';
+    return this.page.subCategoryName == 'UnitMeasure' && this.page.status == 'Activo';
   }
 }
