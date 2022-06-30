@@ -42,6 +42,8 @@ import { OrdersComponent } from './components/sales/orders/orders.component';
 import { BalancesCashComponent } from './components/sales/balances-cash/balances-cash.component';
 import { FoodsComponent } from './components/sales/foods/foods.component';
 import { FoodPackagesComponent } from './components/sales/food-packages/food-packages.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
@@ -79,18 +81,20 @@ import { FoodPackagesComponent } from './components/sales/food-packages/food-pac
     FoodPackagesComponent
 
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatTreeModule,
-    MatButtonModule,
-    ClickOutsideModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatTreeModule,
+        MatButtonModule,
+        ClickOutsideModule,
+        HttpClientModule,
+        MatPaginatorModule,
+        MatTableModule,
+    ],
   providers: [GlobalVariables],
   bootstrap: [AppComponent]
 })
