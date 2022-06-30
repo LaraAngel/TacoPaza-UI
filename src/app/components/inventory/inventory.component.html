@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+
+      <app-department [hidden]="!showDepartment()"></app-department>
+      <app-inventorie-control [hidden]="!showInventoryControl()"></app-inventorie-control>
+      <app-presentation [hidden]="!showPresentation()"></app-presentation>
+      <app-products [hidden]="!showProducts()"></app-products>
+      <app-receive-product [hidden]="!showReceiveProducts()"></app-receive-product>
+      <app-see-inventories [hidden]="!showInventories()"></app-see-inventories>
+      <app-unit-measures [hidden]="!showUnitMeasures()"></app-unit-measures>
+    </div>
+  </div>
+</div>

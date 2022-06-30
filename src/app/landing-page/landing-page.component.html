@@ -1,7 +1,0 @@
-<div (clickOutside)="onClickedOutside($event)">
-<app-header-page (showMenuEvent) = "clickOnMenu($event)" [showMenuBool] = showMenuBool></app-header-page>
-
-<app-menu class="bg-secondary ejemploFeo" [hidden]="showMenuBool" (showInventoryPage) = "showInventory($event)"></app-menu>
-</div>
-
-<app-inventory [hidden]="isInventoryClicker"></app-inventory> 
