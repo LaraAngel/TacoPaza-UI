@@ -1,7 +1,12 @@
 export class Status {
+
   private _id: string
   private _statusName: string
-  private _statusDescription: string
+
+  constructor(id: string, statusName: string) {
+    this._id = id;
+    this._statusName = statusName;
+  }
 
   get id(): string {
     return this._id;
@@ -19,11 +24,4 @@ export class Status {
     this._statusName = value;
   }
 
-  get statusDescription(): string {
-    return this._statusDescription;
-  }
-
-  set statusDescription(value: string) {
-    this._statusDescription = value;
-  }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { MenuCategory } from 'src/app/models/menu/MenuCategory.interface';
+import { MenuCategoryEntity } from 'src/app/models/menu/MenuCategoryEntity';
 import { MenuService} from './service/menu-service.service';
 
 @Component({
@@ -9,12 +9,13 @@ import { MenuService} from './service/menu-service.service';
 })
 export class MenuComponent implements OnInit {
 
-  categories: MenuCategory[];
+  categories: MenuCategoryEntity[];
 
   constructor(private service: MenuService) {}
 
   ngOnInit(): void {
-    this.service.callGetMenuCategories().subscribe(data => this.categories = data);
+    //this.service.callGetMenuCategories().subscribe(data => this.categories = data);
+      this.categories = this.service.callDummyGetMenuCategories();
   }
 
 }

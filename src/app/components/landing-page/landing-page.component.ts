@@ -26,7 +26,8 @@ export class LandingPageComponent implements OnInit {
     return this.page.section == 'Inventario' && this.page.status == 'Active';
   }
   public showSales() {
-    return this.page.section == 'Ventas' && this.page.status == 'Active';
+    //return this.page.section == 'Ventas' && this.page.status == 'Active';
+    return true;
   }
   public showBuyers() {
     return this.page.section == 'Compras' && this.page.status == 'Active';

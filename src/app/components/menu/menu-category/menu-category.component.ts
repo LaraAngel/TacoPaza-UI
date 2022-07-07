@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuCategory } from 'src/app/models/menu/MenuCategory.interface';
+import { MenuCategoryEntity } from 'src/app/models/menu/MenuCategoryEntity';
 
 @Component({
   selector: 'app-menu-category',
@@ -9,7 +9,7 @@ import { MenuCategory } from 'src/app/models/menu/MenuCategory.interface';
 export class MenuCategoryComponent implements OnInit {
 
 
-  @Input() categorie: MenuCategory;
+  @Input() categorie: MenuCategoryEntity;
 
   constructor() { }
 

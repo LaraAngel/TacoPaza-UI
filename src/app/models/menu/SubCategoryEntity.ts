@@ -1,24 +1,16 @@
 import {Status} from "../utils/Status.interface";
 
-export class SubCategoryInterface {
+export class SubCategoryEntity {
     private _id: string
     private _subCategoryName: string
     private _pageName: string
-    private _status: Status;
+    status: Status;
 
   constructor(id: string, subCategoryName: string, pageName: string, status: Status) {
     this._id = id;
     this._subCategoryName = subCategoryName;
     this._pageName = pageName;
-    this._status = status;
-  }
-
-  get status(): Status {
-    return this._status;
-  }
-
-  set status(value: Status) {
-    this._status = value;
+    this.status = status;
   }
 
   get id(): string {

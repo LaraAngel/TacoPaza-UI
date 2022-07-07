@@ -1,12 +1,13 @@
 <div (clickOutside)="onClickedOutside($event)">
   <app-header-page (showMenuEvent)="clickOnMenu($event)" [showMenuBool]=this.page.isShowpage></app-header-page>
 <mat-accordion>
-  <app-menu class="bg-secondary ejemploFeo" [hidden]="this.page.isShowpage"></app-menu>
+  <app-menu class="bg-secondary menuDesing" [hidden]="this.page.isShowpage"></app-menu>
 </mat-accordion>
 </div>
 
 <app-inventory [hidden]="!showInventory()"></app-inventory>
 <app-sales [hidden]="!showSales()" ></app-sales>
+
 <app-buyers [hidden]="!showBuyers()" ></app-buyers>
 <app-reports [hidden]="!showReports()" ></app-reports>
 <app-administration [hidden]="!showAdministration()" ></app-administration>

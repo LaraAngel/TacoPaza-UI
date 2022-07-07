@@ -42,6 +42,9 @@ import { OrdersComponent } from './components/sales/orders/orders.component';
 import { BalancesCashComponent } from './components/sales/balances-cash/balances-cash.component';
 import { FoodsComponent } from './components/sales/foods/foods.component';
 import { FoodPackagesComponent } from './components/sales/food-packages/food-packages.component';
+import { OrderListComponent } from './components/sales/orders/order-list/order-list.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -76,7 +79,8 @@ import { FoodPackagesComponent } from './components/sales/food-packages/food-pac
     OrdersComponent,
     BalancesCashComponent,
     FoodsComponent,
-    FoodPackagesComponent
+    FoodPackagesComponent,
+    OrderListComponent
 
   ],
   imports: [
@@ -90,6 +94,8 @@ import { FoodPackagesComponent } from './components/sales/food-packages/food-pac
     MatButtonModule,
     ClickOutsideModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [GlobalVariables],
   bootstrap: [AppComponent]
