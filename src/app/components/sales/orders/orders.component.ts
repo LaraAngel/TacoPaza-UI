@@ -3,6 +3,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {OrderListEntity} from "../../../models/sales/orders/OrderListEntity";
 import {OrdersService} from "./service/orders.service";
+import {OrderPages} from "./orderPages";
 
 @Component({
   selector: 'app-orders',
@@ -11,7 +12,7 @@ import {OrdersService} from "./service/orders.service";
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(public pages: OrderPages) { }
 
   ngOnInit(): void {}
 

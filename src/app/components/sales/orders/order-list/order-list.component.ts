@@ -3,6 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {OrderListEntity} from "../../../../models/sales/orders/OrderListEntity";
 import {MatPaginator} from "@angular/material/paginator";
 import {OrdersService} from "../service/orders.service";
+import {OrderPages} from "../orderPages";
 
 @Component({
   selector: 'app-order-list',
@@ -11,7 +12,7 @@ import {OrdersService} from "../service/orders.service";
 })
 export class OrderListComponent implements OnInit {
 
-  constructor(private order: OrdersService) { }
+  constructor(private order: OrdersService, private orderpage: OrderPages) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +27,9 @@ export class OrderListComponent implements OnInit {
 
   selectedOrder(row: OrderListEntity) {
     console.log(row)
+  }
+
+  createOrder() {
+    this.orderpage.createNewOrder();
   }
 }

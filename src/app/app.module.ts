@@ -45,6 +45,8 @@ import { FoodPackagesComponent } from './components/sales/food-packages/food-pac
 import { OrderListComponent } from './components/sales/orders/order-list/order-list.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {OrderPages} from "./components/sales/orders/orderPages";
+import { CreateOrderComponent } from './components/sales/orders/create-order/create-order.component';
 
 
 @NgModule({
@@ -80,7 +82,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     BalancesCashComponent,
     FoodsComponent,
     FoodPackagesComponent,
-    OrderListComponent
+    OrderListComponent,
+    CreateOrderComponent
 
   ],
   imports: [
@@ -97,7 +100,10 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatTableModule,
     MatPaginatorModule,
   ],
-  providers: [GlobalVariables],
+  providers: [
+    GlobalVariables,
+    OrderPages
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
