@@ -1,1 +1,8 @@
-<p>department works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+    <app-create-department [hidden]="!pages.createDepartment"></app-create-department>
+      <app-department-list [hidden]="!pages.departmentList"></app-department-list>
+    </div>
+  </div>
+</div>

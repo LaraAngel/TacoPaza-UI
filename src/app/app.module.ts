@@ -24,7 +24,7 @@ import { BuyersComponent } from './components/buyers/buyers.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { SeeInventoriesComponent } from './components/inventory/see-inventories/see-inventories.component';
-import { InventorieControlComponent } from './components/inventory/inventorie-control/inventorie-control.component';
+import { InventoryControlComponent } from './components/inventory/inventory-control/inventory-control.component';
 import { ReceiveProductComponent } from './components/inventory/receive-product/receive-product.component';
 import { ProductsComponent } from './components/inventory/products/products.component';
 import { PresentationComponent } from './components/inventory/presentation/presentation.component';
@@ -47,6 +47,9 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {OrderPages} from "./components/sales/orders/orderPages";
 import { CreateOrderComponent } from './components/sales/orders/create-order/create-order.component';
+import { DepartmentListComponent } from './components/inventory/department/department-list/department-list.component';
+import { CreateDepartmentComponent } from './components/inventory/department/create-department/create-department.component';
+import {DepartmentPages} from "./components/inventory/department/departmentPages";
 
 
 @NgModule({
@@ -64,7 +67,7 @@ import { CreateOrderComponent } from './components/sales/orders/create-order/cre
     ReportsComponent,
     AdministrationComponent,
     SeeInventoriesComponent,
-    InventorieControlComponent,
+    InventoryControlComponent,
     ReceiveProductComponent,
     ProductsComponent,
     PresentationComponent,
@@ -83,7 +86,9 @@ import { CreateOrderComponent } from './components/sales/orders/create-order/cre
     FoodsComponent,
     FoodPackagesComponent,
     OrderListComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    DepartmentListComponent,
+    CreateDepartmentComponent
 
   ],
   imports: [
@@ -102,7 +107,8 @@ import { CreateOrderComponent } from './components/sales/orders/create-order/cre
   ],
   providers: [
     GlobalVariables,
-    OrderPages
+    OrderPages,
+    DepartmentPages
   ],
   bootstrap: [AppComponent]
 })

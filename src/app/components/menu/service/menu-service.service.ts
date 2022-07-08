@@ -7,11 +7,21 @@ import {Status} from "../../../models/utils/Status.interface";
 
 const status = new Status("1", "Active");
 
-const subCategories = [
+const subCategoriesSales = [
   new SubCategoryEntity("1", "Orders", "Comanda", status),
   new SubCategoryEntity("1", "CashBalances", "Corte de Caja", status),
   new SubCategoryEntity("1", "FoodProducts", "Alimentos", status),
   new SubCategoryEntity("1", "FoodPackages", "Paquetes", status)
+];
+const subCategoriesInventory = [
+  new SubCategoryEntity("2", "Department", "Departamento", status),
+  new SubCategoryEntity("2", "InventoryControl", "Control de inventario", status),
+  new SubCategoryEntity("2", "Presentation", "Presentacion", status),
+  new SubCategoryEntity("2", "Products", "Productos", status),
+  new SubCategoryEntity("2", "ReceiveProducts", "Productos recibidos", status),
+  new SubCategoryEntity("2", "SeeInventories", "Ver inventario", status),
+  new SubCategoryEntity("2", "UnitMeasure", "Unidades de medida", status)
+
 ];
 
 @Injectable({
@@ -19,7 +29,8 @@ const subCategories = [
 })
 export class MenuService {
   menuCategories: MenuCategoryEntity[] = [
-    new MenuCategoryEntity("1", "Ventas", subCategories, status)
+    new MenuCategoryEntity("1", "Ventas", subCategoriesSales, status),
+    new MenuCategoryEntity("2","Inventario",subCategoriesInventory,status)
   ];
 
   constructor(private http: HttpClient) { }

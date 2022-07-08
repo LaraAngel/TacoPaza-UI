@@ -17,30 +17,30 @@ export class InventoryComponent implements OnInit {
   }
 
   showDepartment() {
-    return this.page.pageName == 'Departament' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'Department' && this.page.status == 'Active';
   }
 
   showInventoryControl() {
-    return this.page.pageName == 'InventoryControl' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'InventoryControl' && this.page.status == 'Active';
   }
 
   showPresentation() {
-    return this.page.pageName == 'Presentation' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'Presentation' && this.page.status == 'Active';
   }
 
   showProducts() {
-    return this.page.pageName == 'Products' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'Products' && this.page.status == 'Active';
   }
 
   showReceiveProducts() {
-    return this.page.pageName == 'ReceiveProducts' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'ReceiveProducts' && this.page.status == 'Active';
   }
 
   showInventories() {
-    return this.page.pageName == 'SeeInventories' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'SeeInventories' && this.page.status == 'Active';
   }
 
   showUnitMeasures() {
-    return this.page.pageName == 'UnitMeasure' && this.page.status == 'Activo';
+    return this.page.subCategorySection == 'UnitMeasure' && this.page.status == 'Active';
   }
 }
