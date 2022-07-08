@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalVariables} from "../../../Utils/global.variables";
+import {DepartmentPages} from "./departmentPages";
 
 @Component({
   selector: 'app-department',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./department.component.css']
 })
 export class DepartmentComponent implements OnInit {
+  private page: GlobalVariables;
 
-  constructor() { }
-
+  constructor(
+    gVariables: GlobalVariables,
+    public pages:DepartmentPages
+  ) {
+    this.page = gVariables;
+  }
   ngOnInit(): void {
   }
-
 }
