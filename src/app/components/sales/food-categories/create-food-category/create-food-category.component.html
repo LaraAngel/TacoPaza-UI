@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-2 mt-4">
+      <button mat-raised-button (click)="pages.goToFoodCategoriesList()">Regresar</button>
+      <button mat-raised-button color="primary" (click)="saveFoodCategory()" class="mx-2">Guardar</button>
+    </div>
+  </div>
+
+  <div class="row border rounded h-100">
+
+    <div class="col-12 mt-5" *ngIf="foodCategorySelected != undefined">
+      <div class="mx-auto w-75">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>ID</mat-label>
+          <input matInput disabled value="{{foodCategorySelected.id}}">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-12 mt-3">
+      <div class="mx-auto w-75">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Nombre de la categoria</mat-label>
+          <input matInput placeholder="Tacos" [formControl]="categoryName" required>
+          <mat-error *ngIf="categoryName.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-12 mt-2 mb-5">
+      <div class="mx-auto w-75">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Status</mat-label>
+          <mat-select>
+            <div *ngFor="let st of status; index as i; first as isFirst">
+              <mat-option value="one">{{st.statusName}}</mat-option>
+            </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+  </div>
+</div>

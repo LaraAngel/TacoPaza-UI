@@ -32,4 +32,8 @@ export class SalesComponent implements OnInit {
   public showBalancesCash() {
     return this.page.subCategorySection == 'CashBalances' && this.page.status == 'Active';
   }
+
+  showFoodCategories() {
+    return this.page.subCategorySection == 'FoodCategories' && this.page.status == 'Active';
+  }
 }
