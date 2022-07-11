@@ -24,14 +24,14 @@ export class CreateFoodCategoryComponent implements OnInit {
   foodCategoryCreated: FoodCategoryEntity;
 
   constructor(public pages: FoodCategoriesPages, private builder: FormBuilder, private service: FoodCategoriesService) {
-    this.foodCategoryCreated = new FoodCategoryEntity("", "", new Status("", ""))
+    this.foodCategoryCreated = new FoodCategoryEntity("0", "", new Status("", ""))
   }
 
-  ngOnChanges() {
+  ngOnChanges() {}
+
+  ngOnInit(): void {
     this.foodCategoryCreated = this.foodCategorySelected;
   }
-
-  ngOnInit(): void {}
 
   getErrorMessage() {
     if (this.checkoutForm.get('foodCategoryName')?.hasError('required')) {
@@ -46,7 +46,6 @@ export class CreateFoodCategoryComponent implements OnInit {
   }
 
   saveFoodCategory() {
-    this.foodCategoryCreated.id = '0';
     this.service.createNewFoodCategoryDummy(this.foodCategoryCreated);
     this.goToFoodCategoriesList()
   }

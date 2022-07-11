@@ -19,8 +19,8 @@ export class FoodCateoriesListComponent implements OnInit {
 
   ngOnChanges() {
   }
+
   ngOnInit(): void {
-    this.dataTable = this.service.callDummyCategories();
   }
 
   createFoodCategory() {
