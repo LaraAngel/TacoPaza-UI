@@ -47,6 +47,14 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {OrderPages} from "./components/sales/orders/orderPages";
 import { CreateOrderComponent } from './components/sales/orders/create-order/create-order.component';
+import { FoodCategoriesComponent } from './components/sales/food-categories/food-categories.component';
+import { FoodCateoriesListComponent } from './components/sales/food-categories/food-cateories-list/food-cateories-list.component';
+import { CreateFoodCategoryComponent } from './components/sales/food-categories/create-food-category/create-food-category.component';
+import {FoodCategoriesPages} from "./components/sales/food-categories/foodCategoriesPages";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 import { DepartmentListComponent } from './components/inventory/department/department-list/department-list.component';
 import { CreateDepartmentComponent } from './components/inventory/department/create-department/create-department.component';
 import {DepartmentPages} from "./components/inventory/department/departmentPages";
@@ -87,28 +95,39 @@ import {DepartmentPages} from "./components/inventory/department/departmentPages
     FoodPackagesComponent,
     OrderListComponent,
     CreateOrderComponent,
+    FoodCategoriesComponent,
+    FoodCateoriesListComponent,
+    CreateFoodCategoryComponent,
+    CreateOrderComponent,
     DepartmentListComponent,
     CreateDepartmentComponent
 
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatTreeModule,
-    MatButtonModule,
-    ClickOutsideModule,
-    HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatTreeModule,
+        MatButtonModule,
+        ClickOutsideModule,
+        HttpClientModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatSelectModule,
+        FormsModule,
+    ],
   providers: [
     GlobalVariables,
     OrderPages,
-    DepartmentPages
+    DepartmentPages,
+    OrderPages,
+    FoodCategoriesPages
   ],
   bootstrap: [AppComponent]
 })

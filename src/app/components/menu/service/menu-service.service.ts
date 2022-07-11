@@ -11,7 +11,8 @@ const subCategoriesSales = [
   new SubCategoryEntity("1", "Orders", "Comanda", status),
   new SubCategoryEntity("1", "CashBalances", "Corte de Caja", status),
   new SubCategoryEntity("1", "FoodProducts", "Alimentos", status),
-  new SubCategoryEntity("1", "FoodPackages", "Paquetes", status)
+  new SubCategoryEntity("1", "FoodPackages", "Paquetes", status),
+  new SubCategoryEntity("1", "FoodCategories", "Categorias de alimentos", status)
 ];
 const subCategoriesInventory = [
   new SubCategoryEntity("2", "Department", "Departamento", status),

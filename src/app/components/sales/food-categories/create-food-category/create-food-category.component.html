@@ -1,0 +1,52 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="saveFoodCategory()">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 mb-2 mt-4">
+        <button mat-raised-button (click)="goToFoodCategoriesList()">Regresar</button>
+        <button mat-raised-button color="primary" class="mx-2" type="submit">Guardar</button>
+      </div>
+    </div>
+
+    <div class="row border rounded h-100">
+
+      <div class="col-12 mt-5" *ngIf="foodCategorySelected.id != ''">
+        <div class="mx-auto w-75">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>ID</mat-label>
+            <input matInput disabled value="{{foodCategorySelected.id}}">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="mx-auto w-75">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Nombre de la categoria</mat-label>
+            <input matInput placeholder="Tacos" formControlName="foodCategoryName" required
+                   [(ngModel)]="foodCategoryCreated.foodCategoryName">
+            <mat-error *ngIf="checkoutForm.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 mt-2 mb-1">
+          <div class="mx-auto w-75">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label *ngIf="foodCategorySelected.status.statusName == ''">Status</mat-label>
+              <mat-label
+                *ngIf="foodCategorySelected.status.statusName != ''">{{foodCategorySelected.status.statusName}}</mat-label>
+              <mat-select [(ngModel)]="foodCategoryCreated.status" formControlName="foodCategoryStatus">
+                <div *ngFor="let st of status; index as i; first as isFirst">
+                  <mat-option [value]="st">{{st.statusName}}</mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="checkoutForm.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</form>
