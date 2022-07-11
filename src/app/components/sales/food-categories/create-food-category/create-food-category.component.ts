@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FoodCategoriesPages} from "../foodCategoriesPages";
-import {FormControl, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {FoodCategoryEntity} from "../../../../models/sales/foods/FoodCategoryEntity";
 import {Status} from "../../../../models/utils/Status.interface";
+import {FoodCategoriesService} from "../service/food-categories.service";
+import {F} from "@angular/cdk/keycodes";
 
 @Component({
   selector: 'app-create-food-category',
@@ -11,24 +13,51 @@ import {Status} from "../../../../models/utils/Status.interface";
 })
 export class CreateFoodCategoryComponent implements OnInit {
 
-  foodCategorySelected: FoodCategoryEntity;
-  categoryName = new FormControl('', [Validators.required]);
+  @Input() foodCategorySelected: FoodCategoryEntity;
   status: Status[] = [new Status("1", "Activo"), new Status("2", "Desactivo")]
 
-  constructor(public pages: FoodCategoriesPages) { }
+  checkoutForm: FormGroup = this.builder.group({
+    foodCategoryName: ['', Validators.required],
+    foodCategoryStatus: ['', Validators.required]
+  });
 
-  ngOnInit(): void {
+  foodCategoryCreated: FoodCategoryEntity;
+
+  constructor(public pages: FoodCategoriesPages, private builder: FormBuilder, private service: FoodCategoriesService) {
+    this.foodCategoryCreated = new FoodCategoryEntity("", "", new Status("", ""))
+  }
+
+  ngOnChanges() {
+    this.foodCategoryCreated = this.foodCategorySelected;
+  }
+
+  ngOnInit(): void {}
+
+  getErrorMessage() {
+    if (this.checkoutForm.get('foodCategoryName')?.hasError('required')) {
+      return 'La nombre de la categoria es necesario';
+    }
+    if (this.checkoutForm.get('foodCategoryStatus')?.hasError('required') || this.foodCategoryCreated.status.statusName == "") {
+      let status: Status = this.status[0];
+      this.foodCategoryCreated.status = status;
+      return;
+    }
+    return this.checkoutForm.hasError('CategoryName') ? 'Not a valid Category Data' : '';
   }
 
   saveFoodCategory() {
-
+    this.foodCategoryCreated.id = '0';
+    this.service.createNewFoodCategoryDummy(this.foodCategoryCreated);
+    this.goToFoodCategoriesList()
   }
 
-  getErrorMessage() {
-    if (this.categoryName.hasError('required')) {
-      return 'La nombre de la categoria es necesario';
-    }
-
-    return this.categoryName.hasError('CategoryName') ? 'Not a valid Category Name' : '';
+  goToFoodCategoriesList() {
+    this.pages.goToOrderList();
+    this.checkoutForm.reset();
+    this.checkoutForm.get('foodCategoryName')?.clearValidators();
+    this.checkoutForm.get('foodCategoryName')?.updateValueAndValidity();
+    this.checkoutForm.get('foodCategoryStatus')?.clearValidators();
+    this.checkoutForm.get('foodCategoryStatus')?.updateValueAndValidity();
+    this.foodCategorySelected = new FoodCategoryEntity("", "", new Status("", ""));
   }
 }

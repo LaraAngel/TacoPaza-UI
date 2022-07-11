@@ -9,13 +9,19 @@ export class FoodCategoriesService {
 
   constructor() { }
   callDummyCategories(){
+    console.log(foodCategories);
     return foodCategories;
+  }
+
+  createNewFoodCategoryDummy(foodCategoryCreated: FoodCategoryEntity) {
+    foodCategories.push(foodCategoryCreated);
+    console.log(foodCategories);
   }
 }
 
 const status = new Status("1", "Disponible");
 
-const foodCategories: FoodCategoryEntity[] = [
+let foodCategories: FoodCategoryEntity[] = [
   new FoodCategoryEntity("1", "Tacos", status),
   new FoodCategoryEntity("1", "Tortas", status),
   new FoodCategoryEntity("1", "Bebidas", status)

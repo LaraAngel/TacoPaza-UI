@@ -52,7 +52,7 @@ import { FoodCateoriesListComponent } from './components/sales/food-categories/f
 import { CreateFoodCategoryComponent } from './components/sales/food-categories/create-food-category/create-food-category.component';
 import {FoodCategoriesPages} from "./components/sales/food-categories/foodCategoriesPages";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import { DepartmentListComponent } from './components/inventory/department/department-list/department-list.component';
@@ -103,24 +103,25 @@ import {DepartmentPages} from "./components/inventory/department/departmentPages
     CreateDepartmentComponent
 
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatTreeModule,
-    MatButtonModule,
-    ClickOutsideModule,
-    HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatSelectModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatTreeModule,
+        MatButtonModule,
+        ClickOutsideModule,
+        HttpClientModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatSelectModule,
+        FormsModule,
+    ],
   providers: [
     GlobalVariables,
     OrderPages,

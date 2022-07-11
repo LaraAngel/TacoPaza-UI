@@ -17,7 +17,7 @@ export class FoodCategoriesPages {
     this.createFoodCategory = true;
   }
 
-  goToFoodCategoriesList() {
+  goToOrderList() {
     this.hiddeAllPages();
     this.foodCategoriesList = true;
   }
