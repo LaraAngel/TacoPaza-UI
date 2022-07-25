@@ -1,4 +1,4 @@
-import {Status} from "../utils/Status.interface";
+import {Status} from "../../utils/Status.interface";
 
 export class DepartmentListEntity {
   id: number
