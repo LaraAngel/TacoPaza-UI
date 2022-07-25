@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DepartmentPages} from "../departmentPages";
+import {DepartmentService} from "../service/department.service";
 
 @Component({
   selector: 'app-create-department',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-department.component.css']
 })
 export class CreateDepartmentComponent implements OnInit {
+  dataSource: any = this.service.callDummyDepartmentList();
+  displayedColumns: string[] = ["Nombre", "Descripcion"];
 
-  constructor() { }
+
+  constructor(public pages:DepartmentPages, private service:DepartmentService) { }
 
   ngOnInit(): void {
   }
